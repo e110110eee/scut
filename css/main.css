@@ -1,0 +1,277 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+ul{
+	list-style: none;
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+textarea{
+	width: 400px; 
+	height: 200px;
+	resize: none;
+}
+.header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 87px;
+	width: 100%;
+	background: url('../images/login_bg.jpg') repeat-x;
+}
+.content{
+	width: 890px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 10;
+}
+.content .logo{
+	height: 58px;
+	margin-top: 45px;
+
+}
+.content .logo .school_logo{
+	display: inline-block;
+	vertical-align: top;
+	width: 321px;
+	height: 58px;
+	background: url("../images/logo_school.png");
+}
+.content .logo .school_jw{
+	display: inline-block;
+	vertical-align: top;
+	width: 321px;
+	height: 58px;
+	background: url("../images/logo_jw.png") no-repeat 0 center;
+}
+.content .login{
+	margin-top: 40px;
+	font-size: 0px;
+}
+.content .login .login-left{
+	display: inline-block;
+	vertical-align: top;
+	width: 426px;
+	height: 340px;
+	background: url("../images/login_left.jpg") no-repeat 0 center;
+
+}
+.content .login .login-left img{
+	display: block;
+	margin-top: 27px;
+}
+
+.content .login .login-right{
+	display: inline-block;
+	vertical-align: top;
+	width: 462px;
+	height: 340px;
+	background: url("../images/login_right.jpg") no-repeat 0 center;
+	
+	font-family: Verdana,Tahoma,Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #11449e;
+}
+.content .login .login-right #myForm{
+	margin-top: 100px;
+	margin-left: 105px;
+
+}
+.content .login .login-right #myForm li{
+	height: 20px;
+	margin-top: 16px;
+}
+.content .login .login-right #myForm label{
+	display: inline-block;
+	vertical-align: top;
+	width: 66px;
+	height: 20px;
+	line-height: 20px;
+	text-indent: 1.5em;
+}
+.content .login .login-right #myForm img{
+cursor: pointer; 
+vertical-align:middle;
+}
+.content .login .login-right #myForm li:nth-child(4),li:nth-child(5) {
+	display: inline-block;
+	margin-right: 8px;
+	width: 58px;
+	height: 20px;
+}
+.content .login .login-right #myForm li:nth-child(4) input,li:nth-child(5) input{
+	width: 58px;
+	height: 20px;
+	line-height: 12px;
+
+}
+
+
+.content .login .login-right #myForm .user{
+	background: url('../images/login_ico2.gif') no-repeat left 0;
+}
+.content .login .login-right #myForm .password{
+	background: url('../images/login_ico2.gif') no-repeat left -28px;
+}
+.content .login .login-right #myForm .verification{
+	background: url('../images/login_ico2.gif') no-repeat left -88px;
+}
+
+
+/*userPage*/
+.user-header{
+	height: 58px;
+	margin-right: 268px;
+	background: url('../images/head_bg.gif') repeat-x;
+	
+}
+.user-header .logo_school{
+	display: inline-block;
+	vertical-align: top;
+	width: 321px;
+	height: 58px;
+	background: url("../images/logo_school.png");
+}
+.user-header .logo_jw{
+	display: inline-block;
+	vertical-align: top;
+	width: 321px;
+	height: 58px;
+	background: url("../images/logo_jw.png") no-repeat 0 center;
+}
+.user-header .logo_bgright{
+	display: inline-block;
+	vertical-align: top;
+	width: 318px;
+	height: 58px;
+	background: url("../images/info_bg.gif") no-repeat 0 center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+}
+.user-nav{
+	height: 28px;
+	background: url('../images/nav_bg.gif') repeat-x;
+	
+}
+.user-nav ul{
+	font-size: 0;
+}
+.user-nav ul li{
+	display: inline-block;
+	vertical-align: top;
+	width: 88px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+
+}
+.user-nav ul li a{
+	display: inline-block;
+
+	width: 88px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+
+	font-size: 12px;
+	font-weight: bold;
+	color: #11449e;
+}
+.user-nav ul li a:hover{
+	background: #82c9f3;
+}
+.crumbs{
+	height: 20px;
+
+}
+.crumbs em{
+	display: inline-block;
+	vertical-align: top;
+	width: 1.4em;
+	height: 20px;
+	margin-left: 10px;
+	background: url('../images/icons.gif') no-repeat -50px 3px;
+}
+.crumbs span a{
+	color: #11449e;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/*addPage*/
+.add-content{
+	width: 890px;
+	height: 500px;
+	margin: 0 auto;
+	border: 5px solid #82c9f3;
+	border-radius: 5px;
+}
+.add-content #infoForm{
+	display: block;
+	padding-left: 200px;
+
+}
+.add-content #infoForm li{
+	margin: 20px 0;
+}
+.add-content #infoForm li:nth-child(6) ,li:nth-child(7){
+	display: inline-block;
+	
+}
+.add-content #infoForm li:nth-child(6) input,li:nth-child(7) input{
+	display: inline-block;
+	width: 58px;
+	height: 20px;
+	
+}
+
+/*manage*/
+.info-content table{
+	width: 890px;
+	margin: 0 auto;
+	border: 5px solid #82c9f3;
+
+	border-radius: 5px;
+	text-align: center;
+}
+.info-content table td:hover a{
+	color: red;
+}
+/*showPage*/
+.add-content input[disabled = 'disabled']{
+	background: #fff;
+	border: none;
+}
+/*searchPage*/
+.info-content #searchForm{
+	width: 890px;
+
+	margin: 0 auto;
+	font-size: 0px;
+}
+.info-content #searchForm .tool{
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+
+}
+.info-content #searchForm select{
+	display: inline-block;
+
+	height: 29px;
+
+}
+.info-content #searchForm input{
+	display: inline-block;
+	outline: none;
+	height: 25px;
+}
+.info-content #searchForm input[type="submit"]{
+	height: 29px;
+}

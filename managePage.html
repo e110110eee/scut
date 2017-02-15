@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>华南理工大学教务管理系统</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src = "http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="user-header">
+		<span class="logo_school"></span>
+		<span class="logo_jw"></span>
+		<span class="logo_bgright"></span>
+	</div>
+	<div class="user-nav">
+		<ul>
+			<li><a href="userPage.html">回到首页</a></li>
+			<li><a href="managePage.html">信息列表</a></li>
+			<li><a href="addPage.html">添加信息</a></li>
+			<li><a href="#">修改信息</a></li>
+			<li><a href="#">删除信息</a></li>
+		</ul>
+	</div>
+	<div class="crumbs">
+		<em></em><span><a href="#">当前位置:信息列表</a></span>
+	</div>
+	<div class="info-content">
+		<table>
+			<thead>
+				<th>姓名</th>
+				<th>学号</th>
+				<th>学院</th>
+				<th colspan="2">操作</th>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+
+	</div>
+	<script>
+		//获取数据
+		window.onload = function(){
+			var tBody = document.getElementsByTagName('tbody')[0];
+			//发送请求并处理
+			var request = new XMLHttpRequest();
+			request.open("GET","PHP/manage-handler.php");
+			
+			request.send();
+			//监听
+			request.onreadystatechange = function(){		
+				if(request.readyState === 4){
+					if(request.status === 200){
+
+						var data = JSON.parse(request.responseText);
+						var studentGroup = data.student;
+						for(var i=0;i<studentGroup.length;i++){
+							var aHref = 'PHP/modifyPage.php?id='+studentGroup[i].id;
+							console.log(aHref)
+							tBody.innerHTML+= "<td>"+studentGroup[i].name+"</td>"+
+							"<td>"+studentGroup[i].number+"</td>"+
+							"<td>"+studentGroup[i].college+"</td>"+
+							"<td>"+"<a href="+aHref+">"+'修改'+"</a>"+"</td>"+
+							"<td>"+"<a>"+'删除'+"</a>"+"</td>"		
+						}
+					}
+				}	
+			}
+
+
+		}
+
+	</script>
+</body>
+</html>

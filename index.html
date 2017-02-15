@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>华南理工大学教务管理系统</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="header"></div>
+	<div class="content">
+		<div class="logo">
+			<span class="school_logo"></span>
+			<span class="school_jw"></span>
+		</div>
+		<div class="login">
+			<div class="login-left">
+				<img src="images/login_pic.png" alt="bgpic">
+			</div>
+			<div class="login-right">
+
+				<form action="./PHP/validate.php" method="post" id="myForm">
+					<ul>
+						<li>
+							<label for="user" class="user">用户名：</label><input type="text" id="user" name="user">
+						</li>
+						<li>
+							
+							<label for="password" class="password">密码：</label><input type="password" id="password" name="password">
+						</li>
+						<li>
+							
+							<label for="verification" class="verification">验证码:</label><input type="text" id="verification" name="verification">
+							<img id="code" src="PHP/create_code.php" alt="看不清楚，换一张" />
+							
+						</li>
+						<li>
+							<input type="submit" value="提交">
+						</li>
+						
+						<li>
+							<input type="reset" value="重置">	
+						</li>
+					</ul>
+
+				</form>
+1
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
