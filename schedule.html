@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>华南理工大学教务管理系统</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="user-header">
+		<span class="logo_school"></span>
+		<span class="logo_jw"></span>
+		<span class="logo_bgright"></span>
+	</div>
+	<div class="user-nav">
+		<ul>
+			<li><a href="userPage.html">回到首页</a></li>
+			<li><a href="PHP/managePage.php">信息列表</a></li>
+			<li><a href="addPage.html">添加信息</a></li>
+			<li><a href="PHP/managePage.php">修改信息</a></li>
+			<li><a href="PHP/managePage.php">删除信息</a></li>
+			<li><a href="schedule.html">学生课表</a></li>
+			<li style="float: right;"><a href="index.html">返回</a></li>
+			l
+		</ul>
+	</div>
+	<div class="crumbs">
+		<em></em><span><a href="#">当前位置:学生课表</a></span>
+
+
+	</div>
+	<div class="add-content">
+		<table class="form-schedule">
+			<thead>
+				<tr>	
+					<th>星期一</th>
+					<th>星期二</th>
+					<th>星期三</th>
+					<th>星期四</th>
+					<th>星期五</th>
+				</tr>
+
+			</thead>
+			<tbody class="template">
+				<tr>
+					<td class="a"></td>
+					<td class="b"></td>
+					<td class="c"></td>
+					<td class="d"></td>
+					<td class="e"></td>
+				</tr>
+				<tr>
+					<td class="a"></td>
+					<td class="b"></td>
+					<td class="c"></td>
+					<td class="d"></td>
+					<td class="e"></td>
+				</tr>
+				<tr>
+					<td class="a"></td>
+					<td class="b"></td>
+					<td class="c"></td>
+					<td class="d"></td>
+					<td class="e"></td>
+				</tr>
+				<tr>
+					<td class="a"></td>
+					<td class="b"></td>
+					<td class="c"></td>
+					<td class="d"></td>
+					<td class="e"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src = "http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var arr = [];
+		$.ajax({
+			url:'PHP/showSchedule-handler.php',
+			type:"GET",
+			dataType:"json",
+			success:function(data){
+				var student = data.student;
+				$.each(student,function(key,value){
+					$('.template').find(".a").text(value.monday)
+					$('.template').find(".b").text(value.tuseday)
+					$('.template').find(".c").text(value.wensday)
+					$('.template').find(".d").text(value.thursday)
+					$('.template').find(".e").text(value.friday)
+					
+				})
+				
+
+				// for(index in student){
+				// 	arr.push(student[index]);
+				// }
+				// $("tr").each(function(index,ele){alert("1");
+				// 	$("td").each(function(index,ele){
+				// 		$(this).text(arr[index])
+				// })只能改变第一个tr的值
+
+			}
+		})
+	</script>
+</body>
+</html>
