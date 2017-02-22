@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>华南理工大学教务管理系统</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="user-header">
+		<span class="logo_school"></span>
+		<span class="logo_jw"></span>
+		<span class="logo_bgright"></span>
+	</div>
+	<div class="user-nav">
+		<ul>
+			<li><a href="userPage.html">回到首页</a></li>
+			<li><a href="PHP/managePage.php">信息列表</a></li>
+			<li><a href="addPage.html">添加信息</a></li>
+			<li><a href="PHP/managePage.php">修改信息</a></li>
+			<li><a href="PHP/managePage.php">删除信息</a></li>
+			<li><a href="schedule.html">学生课表</a></li>
+			<li><a href="grades.html">成绩查询</a></li>
+			<li style="float: right;"><a href="index.html">返回</a></li>
+			l
+		</ul>
+	</div>
+	<div class="crumbs">
+		<em></em><span><a href="#">当前位置:成绩查询</a></span>
+	</div>
+	<div class="add-content">
+			<ul class="classGrades">
+				<li>
+					<label for="study-year">学年</label><select name="study-year" id="study-year">
+<!-- 						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option> -->
+						<option value="2016">2016</option>
+					</select>
+				</li>
+
+				<li>
+					<label for="study-term">学期</label><select name="study-term" id="study-term">
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+				</li>
+
+				<li>
+					<input type="submit" value="查询" >
+				</li>
+			</ul>
+
+		<table class="gradeShow">
+
+			<textarea style="display: none;">
+				<caption>这是你$studyYear$年度$studyTerm$学期的成绩</caption>
+				<th>
+					<tr>
+						<td>学年</td>
+						<td>学期</td>
+						<td>科目</td>
+						<td>成绩</td>
+					</tr>
+				</th>
+				<tbody>
+					<tr>
+						<td>$studyYear$</td>
+						<td>$studyTerm$</td>
+						<td>$studySubject$</td>
+						<td>$studyGrades$</td>
+					</tr>
+				</tbody>
+			</textarea>
+		</table>
+	</div>
+	<script src = "http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		String.prototype.magic = function(object){
+		    return this.replace(/\$\w+\$/gi,function(matchs){
+		        var returns =object[matchs.replace(/\$/g,"")];
+		        return (returns+"")=="undefined"?"":returns;
+		    })
+		};
+
+
+		$('input[type="submit"]').on('click',function(){
+			$.ajax({
+				url:'PHP/grades-handler.php',
+				type:'GET',
+				dataType:"json",
+				success:function(data){
+					var json = data.student;
+					var htmlList = ''
+					     // textarea中的模板HTML
+					    , htmlTemp = $("textarea").val();
+
+					json.forEach(function(object) {
+					    htmlList += htmlTemp.magic(object);
+
+					});
+					$(htmlList).appendTo('table');
+					$('input[type="submit"]').attr("disabled",'disable')
+				},
+				error:function(){
+					//alert('出现错误！')
+				}
+			})
+		})
+	</script>
+</body>
+</html>

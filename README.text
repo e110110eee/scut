@@ -72,6 +72,14 @@ MYSQL
 查找：select * from table1 where field1 like ’%value1%’ 
 排序：select * from table1 order by field1,field2 [desc]
 
-2/22
+2/20
 使用jq的模板动态处理json数据
 参考https://www.teakki.com/p/57e1023adafc6eb617b27132
+
+2/22
+发现数据库名字不能取“-”还是驼峰式命名吧
+
+.on( events [, selector ] [, data ], handler(eventObject) )
+jQuery.each( collection, callback(indexInArray, valueOfElement) )
+
+添加了成绩查询功能，使用HTML模板添加数据的方式。感觉真的很不错！
